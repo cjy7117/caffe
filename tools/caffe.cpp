@@ -172,10 +172,12 @@ int train() {
 
   caffe::SolverParameter solver_param;
   caffe::ReadSolverParamsFromTextFileOrDie(FLAGS_solver, &solver_param);
-
+  LOG(INFO) << "[LCNN-DEBUG]: FLAGS_solver = " << FLAGS_solver; 
   solver_param.mutable_train_state()->set_level(FLAGS_level);
+  LOG(INFO) << "[LCNN-DEBUG]: FLAGS_level = " << FLAGS_level; 
   for (int i = 0; i < stages.size(); i++) {
     solver_param.mutable_train_state()->add_stage(stages[i]);
+    LOG(INFO) << "[LCNN-DEBUG]: stages[i] = " << stages[i]; 
   }
 
   // If the gpus flag is not provided, allow the mode and device to be set

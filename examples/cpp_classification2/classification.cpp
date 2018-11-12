@@ -6,6 +6,7 @@
 #endif  // USE_OPENCV
 #include <algorithm>
 #include <iosfwd>
+#include <memory>
 #include <string>
 #include <utility>
 #include <vector>
